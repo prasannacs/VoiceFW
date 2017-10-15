@@ -6,6 +6,12 @@ public class AlexaRequestVO {
 	private Session session;
 	private Request request;
 	
+	public Request getRequest() {
+		return request;
+	}
+	public void setRequest(Request request) {
+		this.request = request;
+	}
 	public String getVersion() {
 		return version;
 	}
