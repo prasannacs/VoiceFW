@@ -13,25 +13,31 @@ var appRouter = function(app) {
 
 	app.post("/rolldroid", function(req, res) {
 		console.log("Roll Droid command received ",req.body)
-		duration = req.body.duration
-		direction = req.body.direction
-		return res.send("Roll Droid command successfully sent to BLE Sphero module")
+		return res.send(getResponse(req,"Roll Droid"))
 	});	
 
 	app.post("/spindroid", function(req, res) {
 		console.log("Spin Droid command received ",req.body)
-		duration = req.body.duration
-		direction = req.body.direction
-		return res.send("Spin Droid command successfully sent to BLE Sphero module")
+		return res.send(getResponse(req,"Spin Droid"))
 	});	
 
 	app.post("/changedroidcolor", function(req, res) {
 		console.log("Change Droid Color command received ",req.body)
-		color = req.body.color
-		return res.send("Change Droid Color command successfully sent to BLE Sphero module")
+		return res.send("Change Droid Color")
 	});	
 
 
+}
+
+getResponse = function(req,command)	{
+	var response = {
+		"responseMessage": command,
+		"alexaAppId": req.body.alexaAppId,
+		"duration" : req.body.duration,
+		"direction" : req.body.direction,
+		"color" : req.body.color
+	}
+	return response	
 }
 
 var sphero = require("sphero"),
