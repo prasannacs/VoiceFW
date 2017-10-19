@@ -23,7 +23,7 @@ var appRouter = function(app) {
 
 	app.post("/changedroidcolor", function(req, res) {
 		console.log("Change Droid Color command received ",req.body)
-		return res.send("Change Droid Color")
+		return res.send(getResponse(req,"Change Droid Color"))
 	});	
 
 
