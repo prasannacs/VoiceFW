@@ -1,0 +1,5 @@
+package com.voicefw.alexa.service;
+
+public class DroidService {
+
+}

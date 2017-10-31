@@ -1,0 +1,63 @@
+package com.voicefw.alexa.utilities;
+
+import com.voicefw.alexa.vo.AlexaVO;
+import com.voicefw.alexa.vo.Card;
+import com.voicefw.alexa.vo.DroidVO;
+import com.voicefw.alexa.vo.OutputSpeech;
+import com.voicefw.alexa.vo.Reprompt;
+import com.voicefw.alexa.vo.Response;
+
+public class BuildAlexaVOUtility {
+	
+	public static AlexaVO getAlexaVO(DroidVO res)	{
+    	AlexaVO vo = new AlexaVO();
+    	vo.setVersion("1.0");
+    	OutputSpeech outputSpeech = new OutputSpeech();
+    	outputSpeech.setText("Command "+ res.getResponseMessage()  +" sucessfully send to BB8 Droid");
+    	outputSpeech.setType("PlainText");
+    	Response response = new Response();
+    	response.setOutputSpeech(outputSpeech);
+    	response.setCard(getCard());
+    	vo.setResponse(response);
+    	Reprompt reprompt = new Reprompt();
+    	OutputSpeech outputSpeech1 = new OutputSpeech();
+    	outputSpeech1.setType("PlainText");
+    	outputSpeech1.setText("Can I help you with anything else?");
+    	reprompt.setOutputSpeech(outputSpeech1);
+    	response.setReprompt(reprompt);
+    	response.setShouldEndSession(false);
+        return vo;
+		
+	}
+	
+	public static AlexaVO errorAlexaVO()	{
+    	AlexaVO vo = new AlexaVO();
+    	vo.setVersion("1.0");
+    	OutputSpeech outputSpeech = new OutputSpeech();
+    	outputSpeech.setText("Cannot understand your command. Check your request object in service. Can I help you with anything else?");
+    	outputSpeech.setType("PlainText");
+    	Response response = new Response();
+    	response.setOutputSpeech(outputSpeech);
+    	response.setCard(getCard());
+    	vo.setResponse(response);
+    	Reprompt reprompt = new Reprompt();
+    	OutputSpeech outputSpeech1 = new OutputSpeech();
+    	outputSpeech1.setType("PlainText");
+    	outputSpeech1.setText("Can I help you with anything else?");
+    	reprompt.setOutputSpeech(outputSpeech1);
+    	response.setReprompt(reprompt);
+    	response.setShouldEndSession(false);
+        return vo;
+		
+	}
+	
+	private static Card getCard()	{
+    	Card card = new Card();
+    	card.setTitle("BB8 Droid Command");
+    	card.setType("Simple");
+    	card.setContent("Today will provide you a new learning opportunity.  Stick with it and the possibilities will be endless.");
+    	return card;
+	}
+
+
+}

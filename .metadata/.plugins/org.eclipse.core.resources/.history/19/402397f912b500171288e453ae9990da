@@ -1,0 +1,30 @@
+package com.voicefw.alexa.vo;
+
+import java.util.Map;
+
+public class Intent {
+	
+	private String name;
+	private Map<String,Slot> slotMap;
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public Map<String,Slot> getSlots() {
+		return slotMap;
+	}
+
+	public Slot getSlot(String key)	{
+		if( slotMap.containsKey(key))
+			return slotMap.get(key);
+		else
+			return null;
+	}
+	
+
+}

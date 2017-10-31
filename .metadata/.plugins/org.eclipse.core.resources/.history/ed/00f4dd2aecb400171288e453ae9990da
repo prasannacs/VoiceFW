@@ -1,0 +1,20 @@
+package com.voicefw.alexa.vo;
+
+import java.util.List;
+import java.util.Map;
+
+public class Slots {
+	
+	private Map slotList;
+
+	public Map getSlotList() {
+		return slotList;
+	}
+
+	public void setSlotList(Map slotList) {
+		this.slotList = slotList;
+	}
+
+	
+
+}

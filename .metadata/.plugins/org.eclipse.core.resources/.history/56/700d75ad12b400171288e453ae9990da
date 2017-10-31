@@ -1,0 +1,10 @@
+package com.voicefw.alexa.vo;
+
+public class Slots {
+	
+	private Duration duration;
+	private Color color;
+	
+	
+
+}

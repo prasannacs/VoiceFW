@@ -1,0 +1,22 @@
+package com.voicefw.alexa.vo;
+
+public class Slots {
+	
+	private Duration duration;
+	private Color color;
+	public Duration getDuration() {
+		return duration;
+	}
+	public void setDuration(Duration duration) {
+		this.duration = duration;
+	}
+	public Color getColor() {
+		return color;
+	}
+	public void setColor(Color color) {
+		this.color = color;
+	}
+	
+	
+
+}

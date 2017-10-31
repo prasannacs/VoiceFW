@@ -1,0 +1,26 @@
+package com.voicefw.alexa.vo;
+
+public class Intent {
+	
+	private String name;
+//	private Slots slots;
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+//	public Slots getSlots() {
+//		return slots;
+//	}
+//
+//	public void setSlots(Slots slots) {
+//		this.slots = slots;
+//	}
+//	
+	
+
+}
